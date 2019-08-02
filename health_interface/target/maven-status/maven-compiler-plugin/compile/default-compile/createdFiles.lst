@@ -1,0 +1,6 @@
+com\itheima\MemberService.class
+com\itheima\CheckItemService.class
+com\itheima\CheckGroupService.class
+com\itheima\OrderService.class
+com\itheima\OrderSettingService.class
+com\itheima\PackageService.class
