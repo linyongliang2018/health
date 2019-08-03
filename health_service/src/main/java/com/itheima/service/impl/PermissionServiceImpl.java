@@ -7,12 +7,13 @@ import com.github.pagehelper.PageHelper;
 import com.github.pagehelper.StringUtil;
 import com.itheima.PermissionService;
 import com.itheima.constant.MessageConstant;
-import com.itheima.dao.CheckItemDao;
 import com.itheima.dao.PermissionDao;
 import com.itheima.entity.PageResult;
 import com.itheima.pojo.Permission;
 import com.itheima.pojo.QueryPageBean;
 import org.springframework.beans.factory.annotation.Autowired;
+
+import java.util.List;
 
 @Service(interfaceClass = PermissionService.class)
 public class PermissionServiceImpl implements PermissionService {
@@ -52,5 +53,10 @@ public class PermissionServiceImpl implements PermissionService {
     @Override
     public void edit(Permission permission) {
         permissionDao.edit(permission);
+    }
+
+    @Override
+    public List<Permission> findAll() {
+        return permissionDao.findAll();
     }
 }

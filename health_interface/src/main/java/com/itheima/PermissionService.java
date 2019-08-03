@@ -4,6 +4,8 @@ import com.itheima.entity.PageResult;
 import com.itheima.pojo.Permission;
 import com.itheima.pojo.QueryPageBean;
 
+import java.util.List;
+
 public interface PermissionService {
     PageResult<Permission> findPage(QueryPageBean queryPageBean);
 
@@ -14,4 +16,7 @@ public interface PermissionService {
     Permission findById(Integer id);
 
     void edit(Permission permission);
+
+    List<Permission> findAll();
+
 }

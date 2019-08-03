@@ -9,6 +9,8 @@ import com.itheima.pojo.Menu;
 import com.itheima.pojo.QueryPageBean;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.List;
+
 
 @RestController
 @RequestMapping("/menu")
@@ -51,5 +53,11 @@ public class MenuController {
     public Result edit(@RequestBody Menu menu){
         menuService.edit(menu);
         return new Result(true, MessageConstant.EDIT_MENU_SUCCESS);
+    }
+
+    @GetMapping("/findAll")
+    public Result findAll() {
+        List<Menu> menus = menuService.findAll();
+        return new Result(true, MessageConstant.QUERY_MENU_SUCCESS, menus);
     }
 }

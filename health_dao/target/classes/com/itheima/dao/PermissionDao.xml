@@ -36,4 +36,8 @@
             description=#{description}
         where id=#{id}
     </update>
+
+    <select id="findAll" resultType="com.itheima.pojo.Permission">
+        select * from t_permission
+    </select>
 </mapper>

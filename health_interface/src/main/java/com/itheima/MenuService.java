@@ -4,6 +4,8 @@ import com.itheima.entity.PageResult;
 import com.itheima.pojo.Menu;
 import com.itheima.pojo.QueryPageBean;
 
+import java.util.List;
+
 public interface MenuService {
     PageResult<Menu> findPage(QueryPageBean queryPageBean);
 
@@ -14,4 +16,7 @@ public interface MenuService {
     Menu findById(Integer id);
 
     void edit(Menu menu);
+
+    List<Menu> findAll();
+
 }

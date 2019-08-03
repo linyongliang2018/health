@@ -3,6 +3,8 @@ package com.itheima.dao;
 import com.github.pagehelper.Page;
 import com.itheima.pojo.Permission;
 
+import java.util.List;
+
 public interface PermissionDao {
     Page<Permission> findAllByCondition(String queryString);
 
@@ -16,4 +18,5 @@ public interface PermissionDao {
 
     void edit(Permission permission);
 
+    List<Permission> findAll();
 }

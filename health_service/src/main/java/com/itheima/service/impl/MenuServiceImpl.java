@@ -12,6 +12,8 @@ import com.itheima.pojo.Menu;
 import com.itheima.pojo.QueryPageBean;
 import org.springframework.beans.factory.annotation.Autowired;
 
+import java.util.List;
+
 @Service(interfaceClass = MenuService.class)
 public class MenuServiceImpl implements MenuService {
     @Autowired
@@ -49,5 +51,10 @@ public class MenuServiceImpl implements MenuService {
     @Override
     public void edit(Menu menu) {
         menuDao.edit(menu);
+    }
+
+    @Override
+    public List<Menu> findAll() {
+        return menuDao.findAll();
     }
 }

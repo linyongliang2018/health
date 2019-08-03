@@ -15,6 +15,7 @@ public class MessageConstant {
     public static final String EDIT_CHECKITEM_FAIL = "编辑检查项失败";
     public static final String EDIT_CHECKITEM_SUCCESS = "编辑检查项成功";
     public static final String QUERY_CHECKITEM_SUCCESS = "查询检查项成功";
+    public static final String QUERY_PERMISSION_SUCCESS = "查询权限项成功";
     public static final String QUERY_MENU_SUCCESS = "查询菜单项成功";
     public static final String QUERY_CHECKITEM_FAIL = "查询检查项失败";
     public static final String UPLOAD_SUCCESS = "上传成功";
@@ -72,6 +73,7 @@ public class MessageConstant {
     public static final String GET_SETMEAL_COUNT_REPORT_FAIL = "获取套餐统计数据失败";
     public static final String GET_BUSINESS_REPORT_SUCCESS = "获取运营统计数据成功";
     public static final String GET_PERMISSIONLIST_SUCCESS = "获取运营统计数据成功";
+    public static final String GET_ROLELIST_SUCCESS = "获取运营统计数据成功";
     public static final String GET_MENULIST_SUCCESS = "获取菜单数据成功";
     public static final String GET_BUSINESS_REPORT_FAIL = "获取运营统计数据失败";
     public static final String GET_SETMEAL_LIST_SUCCESS = "查询套餐列表数据成功";
@@ -79,4 +81,11 @@ public class MessageConstant {
     public static final String QUERY_CHECKGROUP_CHECKITEM_SUCCESS = "查询检查组的检查项成功";
     public static final String PERMISSION_WAS_USED = "当前的权限项已被使用,无法删除";
 
+    public static final String ADD_ROLE_SUCCESS = "添加角色成功";
+    public static final String ADD_ROLE_FAIL = "添加角色失败";
+    public static final String DELETE_ROLE_FAIL = "删除角色失败";
+    public static final String DELETE_ROLE_SUCCESS = "删除角色成功";
+    public static final String ROLE_WAS_USED = "该角色已被使用";
+    public static final String QUERY_ROLE_SUCCESS = "查询角色信息成功";
+    public static final String EDIT_ROLE_SUCCESS = "修改角色信息成功";
 }

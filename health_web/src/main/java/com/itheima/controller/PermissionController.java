@@ -9,6 +9,7 @@ import com.itheima.pojo.Permission;
 import com.itheima.pojo.QueryPageBean;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.List;
 
 
 @RestController
@@ -51,5 +52,10 @@ public class PermissionController {
     public Result edit(@RequestBody Permission permission){
         permissionService.edit(permission);
         return new Result(true, MessageConstant.EDIT_CHECKGROUP_SUCCESS);
+    }
+    @GetMapping("/findAll")
+    public Result findAll() {
+        List<Permission> permissions = permissionService.findAll();
+        return new Result(true, MessageConstant.QUERY_PERMISSION_SUCCESS, permissions);
     }
 }
