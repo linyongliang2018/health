@@ -38,4 +38,60 @@
             </collection>
         </collection>
     </resultMap>
+
+    <select id="findAllByCondition" parameterType="string" resultType="com.itheima.pojo.User">
+        select * From t_user
+        <where>
+            <if test="null != value and value.length > 0">
+                username like #{value} or telephone like #{value}
+            </if>
+        </where>
+    </select>
+
+    <insert id="add" parameterType="com.itheima.pojo.User">
+        <selectKey resultType="int" order="AFTER" keyProperty="id">
+            select last_insert_id()
+        </selectKey>
+        insert into t_user
+        (birthday,gender,username,password,remark,station,telephone)
+        values (#{birthday},#{gender},#{username},#{password},#{remark},#{station},#{telephone})
+    </insert>
+
+    <insert id="addUserAndRole" parameterType="int">
+        insert into t_user_role values (#{id}, #{roleId})
+    </insert>
+
+    <select id="findCountByUserId" parameterType="int" resultType="long">
+        select count(1) from t_user_role where user_id = #{id}
+    </select>
+
+    <delete id="deleteById" parameterType="int">
+        delete from t_user where id = #{id}
+    </delete>
+
+    <select id="findById" parameterType="int" resultType="com.itheima.pojo.User">
+         select * from t_user where id=#{id}
+    </select>
+
+    <select id="findRoleIdsByUserId" parameterType="int" resultType="int">
+        select role_id from t_user_role where user_id=#{userId}
+    </select>
+
+    <update id="edit" parameterType="com.itheima.pojo.User">
+        update t_user
+        set
+            birthday=#{birthday},
+            gender=#{gender},
+            username=#{username},
+            password=#{password},
+            remark=#{remark},
+            station=#{station},
+            telephone=#{telephone}
+        where
+          id=#{id}
+    </update>
+
+    <delete id="deleteAssociation" parameterType="int">
+        delete from t_user_role where user_id = #{userId}
+    </delete>
 </mapper>

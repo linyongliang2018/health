@@ -4,6 +4,8 @@ import com.itheima.entity.PageResult;
 import com.itheima.pojo.QueryPageBean;
 import com.itheima.pojo.Role;
 
+import java.util.List;
+
 public interface RoleService {
     PageResult<Role> findPage(QueryPageBean queryPageBean);
 
@@ -14,4 +16,7 @@ public interface RoleService {
     Role findById(Integer id);
 
     void edit(Role role);
+
+    List<Role> findAll();
+
 }

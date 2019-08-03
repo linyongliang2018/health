@@ -10,6 +10,8 @@ import com.itheima.pojo.QueryPageBean;
 import com.itheima.pojo.Role;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.List;
+
 @RestController
 @RequestMapping("/role")
 public class RoleController {
@@ -53,5 +55,11 @@ public class RoleController {
     public Result edit(@RequestBody Role role){
         roleService.edit(role);
         return new Result(true, MessageConstant.EDIT_ROLE_SUCCESS);
+    }
+
+    @GetMapping("/findAll")
+    public Result findAll() {
+        List<Role> roles = roleService.findAll();
+        return new Result(true, MessageConstant.QUERY_ROLE_SUCCESS, roles);
     }
 }

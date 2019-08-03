@@ -88,4 +88,13 @@ public class MessageConstant {
     public static final String ROLE_WAS_USED = "该角色已被使用";
     public static final String QUERY_ROLE_SUCCESS = "查询角色信息成功";
     public static final String EDIT_ROLE_SUCCESS = "修改角色信息成功";
+    public static final String GET_USER_SUCCESS = "获取用户信息成功";
+    public static final String ADD_USER_SUCCESS = "添加用户成功";
+    public static final String ADD_USER_FAIL = "添加用户失败";
+    public static final String DELETE_USER_FAIL = "删除用户失败";
+    public static final String DELETE_USER_SUCCESS = "删除用户成功";
+    public static final String USER_WAS_USED = "用户已经被使用";
+    public static final String QUERY_USER_SUCCESS = "查询用户成功";
+    public static final String QUERY_ROLEIDBYUSERID_SUCCESS = "通过用户名查询角色Id成功";
+    public static final String EDIT_USER_SUCCESS = "编辑用户信息成功";
 }

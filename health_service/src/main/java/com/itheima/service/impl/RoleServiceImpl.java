@@ -13,6 +13,8 @@ import com.itheima.pojo.Role;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.transaction.annotation.Transactional;
 
+import java.util.List;
+
 @Service(interfaceClass = RoleService.class)
 public class RoleServiceImpl implements RoleService {
     @Autowired
@@ -61,5 +63,10 @@ public class RoleServiceImpl implements RoleService {
     @Override
     public void edit(Role role) {
         roleDao.edit(role);
+    }
+
+    @Override
+    public List<Role> findAll() {
+        return roleDao.findAll();
     }
 }

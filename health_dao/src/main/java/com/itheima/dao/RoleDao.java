@@ -4,6 +4,8 @@ import com.github.pagehelper.Page;
 import com.itheima.pojo.Role;
 import org.apache.ibatis.annotations.Param;
 
+import java.util.List;
+
 public interface RoleDao {
     Page<Role> findAllByCondition(String queryString);
 
@@ -20,4 +22,7 @@ public interface RoleDao {
     Role findById(Integer id);
 
     void edit(Role role);
+
+    List<Role> findAll();
+
 }
