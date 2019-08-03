@@ -6,6 +6,8 @@ public class MessageConstant {
      */
     public static final String DELETE_CHECKITEM_FAIL = "删除检查项失败";
     public static final String DELETE_CHECKITEM_SUCCESS = "删除检查项成功";
+    public static final String DELETE_PERMISSION_SUCCESS = "删除权限项成功";
+    public static final String DELETE_PERMISSION_FAIL = "删除权限项失败";
     public static final String ADD_CHECKITEM_SUCCESS = "新增检查项成功";
     public static final String ADD_CHECKITEM_FAIL = "新增检查项失败";
     public static final String EDIT_CHECKITEM_FAIL = "编辑检查项失败";
@@ -14,6 +16,7 @@ public class MessageConstant {
     public static final String QUERY_CHECKITEM_FAIL = "查询检查项失败";
     public static final String UPLOAD_SUCCESS = "上传成功";
     public static final String ADD_CHECKGROUP_FAIL = "新增检查组失败";
+    public static final String ADD_PERMISSION_SUCCESS = "新增权限成功";
     public static final String ADD_CHECKGROUP_SUCCESS = "新增检查组成功";
     public static final String DELETE_CHECKGROUP_FAIL = "删除检查组失败";
     public static final String DELETE_CHECKGROUP_SUCCESS = "删除检查组成功";
@@ -21,6 +24,7 @@ public class MessageConstant {
     public static final String QUERY_CHECKGROUP_FAIL = "查询检查组失败";
     public static final String EDIT_CHECKGROUP_FAIL = "编辑检查组失败";
     public static final String EDIT_CHECKGROUP_SUCCESS = "编辑检查组成功";
+    public static final String EDIT_PERMISSION_SUCCESS = "编辑权限项成功";
     public static final String PIC_UPLOAD_SUCCESS = "图片上传成功";
     public static final String PIC_UPLOAD_FAIL = "图片上传失败";
     public static final String ADD_SETMEAL_FAIL = "新增套餐失败";
@@ -62,8 +66,11 @@ public class MessageConstant {
     public static final String GET_SETMEAL_COUNT_REPORT_SUCCESS = "获取套餐统计数据成功";
     public static final String GET_SETMEAL_COUNT_REPORT_FAIL = "获取套餐统计数据失败";
     public static final String GET_BUSINESS_REPORT_SUCCESS = "获取运营统计数据成功";
+    public static final String GET_PERMISSIONLIST_SUCCESS = "获取运营统计数据成功";
     public static final String GET_BUSINESS_REPORT_FAIL = "获取运营统计数据失败";
     public static final String GET_SETMEAL_LIST_SUCCESS = "查询套餐列表数据成功";
     public static final String GET_SETMEAL_LIST_FAIL = "查询套餐列表数据失败";
     public static final String QUERY_CHECKGROUP_CHECKITEM_SUCCESS = "查询检查组的检查项成功";
+    public static final String PERMISSION_WAS_USED = "当前的权限项已被使用,无法删除";
+
 }

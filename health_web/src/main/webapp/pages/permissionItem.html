@@ -45,11 +45,11 @@
 <body class="hold-transition">
 <div id="app">
     <div class="content-header">
-        <h1>预约管理<small>检查组管理</small></h1>
+        <h1>权限管理<small>权限项管理</small></h1>
         <el-breadcrumb separator-class="el-icon-arrow-right" class="breadcrumb">
             <el-breadcrumb-item :to="{ path: '/' }">首页</el-breadcrumb-item>
-            <el-breadcrumb-item>预约管理</el-breadcrumb-item>
-            <el-breadcrumb-item>检查组管理</el-breadcrumb-item>
+            <el-breadcrumb-item>权限管理</el-breadcrumb-item>
+            <el-breadcrumb-item>权限项管理</el-breadcrumb-item>
         </el-breadcrumb>
     </div>
     <div class="app-container">
@@ -62,15 +62,15 @@
             </div>
             <el-table size="small" current-row-key="id" :data="dataList" stripe highlight-current-row>
                 <el-table-column type="index" align="center" label="序号"></el-table-column>
-                <el-table-column prop="code" label="检查组编码" align="center"></el-table-column>
-                <el-table-column prop="name" label="检查组名称" align="center"></el-table-column>
-                <el-table-column label="适用性别" align="center">
+<!--                <el-table-column prop="code" label="检查组编码" align="center"></el-table-column>-->
+                <el-table-column prop="name" label="权限名称" align="center"></el-table-column>
+                <!--<el-table-column label="适用性别" align="center">
                     <template slot-scope="scope">
                         <span>{{ scope.row.sex == '0' ? '不限' : scope.row.sex == '1' ? '男' : '女'}}</span>
                     </template>
-                </el-table-column>
-                <el-table-column prop="helpCode" label="助记码" align="center"></el-table-column>
-                <el-table-column prop="remark" label="说明" align="center"></el-table-column>
+                </el-table-column>-->
+<!--                <el-table-column prop="helpCode" label="助记码" align="center"></el-table-column>-->
+<!--                <el-table-column prop="remark" label="说明" align="center"></el-table-column>-->
                 <el-table-column label="操作" align="center">
                     <template slot-scope="scope">
                         <el-button type="primary" size="mini" @click="handleUpdate(scope.row)">编辑</el-button>
@@ -97,17 +97,19 @@
                                 <el-form label-position="right" label-width="100px">
                                     <el-row>
                                         <el-col :span="12">
-                                            <el-form-item label="编码">
-                                                <el-input v-model="formData.code"/>
-                                            </el-form-item>
-                                        </el-col>
-                                        <el-col :span="12">
                                             <el-form-item label="名称">
                                                 <el-input v-model="formData.name"/>
                                             </el-form-item>
                                         </el-col>
                                     </el-row>
                                     <el-row>
+                                        <el-col :span="12">
+                                            <el-form-item label="权限关键字(英文大写)">
+                                                <el-input v-model="formData.keyword"/>
+                                            </el-form-item>
+                                        </el-col>
+                                    </el-row>
+                                   <!-- <el-row>
                                         <el-col :span="12">
                                             <el-form-item label="适用性别">
                                                 <el-select v-model="formData.sex">
@@ -122,24 +124,24 @@
                                                 <el-input v-model="formData.helpCode"/>
                                             </el-form-item>
                                         </el-col>
-                                    </el-row>
+                                    </el-row>-->
                                     <el-row>
                                         <el-col :span="24">
-                                            <el-form-item label="说明">
-                                                <el-input v-model="formData.remark" type="textarea"></el-input>
+                                            <el-form-item label="特别说明">
+                                                <el-input v-model="formData.description" type="textarea"></el-input>
                                             </el-form-item>
                                         </el-col>
                                     </el-row>
-                                    <el-row>
+                                    <!--<el-row>
                                         <el-col :span="24">
                                             <el-form-item label="注意事项">
                                                 <el-input v-model="formData.attention" type="textarea"></el-input>
                                             </el-form-item>
                                         </el-col>
-                                    </el-row>
+                                    </el-row>-->
                                 </el-form>
                             </el-tab-pane>
-                            <el-tab-pane label="检查项信息" name="second">
+                           <!-- <el-tab-pane label="检查项信息" name="second">
                                 <div class="checkScrol">
                                     <table class="datatable">
                                         <thead>
@@ -162,7 +164,7 @@
                                         </tbody>
                                     </table>
                                 </div>
-                            </el-tab-pane>
+                            </el-tab-pane>-->
                         </el-tabs>
                     </template>
                     <div slot="footer" class="dialog-footer">
@@ -181,17 +183,17 @@
                                 <el-form label-position="right" label-width="100px">
                                     <el-row>
                                         <el-col :span="12">
-                                            <el-form-item label="编码">
-                                                <el-input v-model="formData.code"/>
-                                            </el-form-item>
-                                        </el-col>
-                                        <el-col :span="12">
                                             <el-form-item label="名称">
                                                 <el-input v-model="formData.name"/>
                                             </el-form-item>
                                         </el-col>
+                                        <el-col :span="12">
+                                            <el-form-item label="权限关键字">
+                                                <el-input v-model="formData.keyword"/>
+                                            </el-form-item>
+                                        </el-col>
                                     </el-row>
-                                    <el-row>
+                                   <!-- <el-row>
                                         <el-col :span="12">
                                             <el-form-item label="适用性别">
                                                 <el-select v-model="formData.sex">
@@ -200,14 +202,14 @@
                                                     <el-option label="女" value="2"></el-option>
                                                 </el-select>
                                             </el-form-item>
-                                        </el-col>
+                                        </el-col>-->
                                         <el-col :span="12">
-                                            <el-form-item label="助记码">
-                                                <el-input v-model="formData.helpCode"/>
+                                            <el-form-item label="特别说明">
+                                                <el-input v-model="formData.description"/>
                                             </el-form-item>
                                         </el-col>
                                     </el-row>
-                                    <el-row>
+                                   <!-- <el-row>
                                         <el-col :span="24">
                                             <el-form-item label="说明">
                                                 <el-input v-model="formData.remark" type="textarea"></el-input>
@@ -220,33 +222,33 @@
                                                 <el-input v-model="formData.attention" type="textarea"></el-input>
                                             </el-form-item>
                                         </el-col>
-                                    </el-row>
+                                    </el-row>-->
                                 </el-form>
                             </el-tab-pane>
-                            <el-tab-pane label="检查项信息" name="second">
-                                <div class="checkScrol">
-                                    <table class="datatable">
-                                        <thead>
-                                        <tr>
-                                            <th>选择</th>
-                                            <th>项目编码</th>
-                                            <th>项目名称</th>
-                                            <th>项目说明</th>
-                                        </tr>
-                                        </thead>
-                                        <tbody>
-                                        <tr v-for="c in tableData">
-                                            <td>
-                                                <input :id="c.id" v-model="checkitemIds" type="checkbox" :value="c.id">
-                                            </td>
-                                            <td><label :for="c.id">{{c.code}}</label></td>
-                                            <td><label :for="c.id">{{c.name}}</label></td>
-                                            <td><label :for="c.id">{{c.remark}}</label></td>
-                                        </tr>
-                                        </tbody>
-                                    </table>
-                                </div>
-                            </el-tab-pane>
+<!--                            <el-tab-pane label="检查项信息" name="second">-->
+<!--                                <div class="checkScrol">-->
+<!--                                    <table class="datatable">-->
+<!--                                        <thead>-->
+<!--                                        <tr>-->
+<!--                                            <th>选择</th>-->
+<!--                                            <th>项目编码</th>-->
+<!--                                            <th>项目名称</th>-->
+<!--                                            <th>项目说明</th>-->
+<!--                                        </tr>-->
+<!--                                        </thead>-->
+<!--                                        <tbody>-->
+<!--                                        <tr v-for="c in tableData">-->
+<!--                                            <td>-->
+<!--                                                <input :id="c.id" v-model="checkitemIds" type="checkbox" :value="c.id">-->
+<!--                                            </td>-->
+<!--                                            <td><label :for="c.id">{{c.code}}</label></td>-->
+<!--                                            <td><label :for="c.id">{{c.name}}</label></td>-->
+<!--                                            <td><label :for="c.id">{{c.remark}}</label></td>-->
+<!--                                        </tr>-->
+<!--                                        </tbody>-->
+<!--                                    </table>-->
+<!--                                </div>-->
+<!--                            </el-tab-pane>-->
                         </el-tabs>
                     </template>
                     <div slot="footer" class="dialog-footer">
@@ -284,14 +286,14 @@
         methods: {
             //编辑,提交修改
             handleEdit() {
-                if (this.checkitemIds.length == 0) {
-                    this.$message({
-                        message: "没有选择检查项,不能提交",
-                        type: 'error'
-                    });
-                    return
-                }
-                axios.post('/checkgroup/edit.do?checkitemIds=' + this.checkitemIds, this.formData).then((res) => {
+                /*if (this.checkitemIds.length == 0) {
+                        this.$message({
+                            message: "没有选择检查项,不能提交",
+                            type: 'error'
+                        });
+                        return
+                }*/
+                axios.post('/permission/edit.do', this.formData).then((res) => {
                     if (res.data.flag) {
                         this.dialogFormVisible4Edit = false
                         this.$message({
@@ -310,15 +312,15 @@
             },
             //添加
             handleAdd() {
-                if (this.checkitemIds.length == 0) {
+                /*if (this.checkitemIds.length == 0) {
                     // 没有选检查项
                     this.$message({
                         message: "没有选择检查项，不能提交",
                         type: 'error'
                     });
                     return;
-                }
-                axios.post('/checkgroup/add.do?checkitemIds=' + this.checkitemIds, this.formData).then(res => {
+                }*/
+                axios.post('/permission/add.do', this.formData).then(res => {
                     this.$message({
                         message: res.data.message,
                         type: res.data.flag ? 'success' : 'error'
@@ -333,7 +335,7 @@
             },
             //分页查询
             findPage() {
-                axios.post("/checkgroup/findPage.do", this.pagination).then((res) => {
+                axios.post("/permission/findPage.do", this.pagination).then((res) => {
                     if (res.data.flag) {
                         this.dataList = res.data.data.rows
                         this.pagination.total = res.data.data.total
@@ -371,12 +373,12 @@
             handleUpdate(row) {
                 this.resetForm()
                 var checkGroupId = row.id;
-                axios.get('/checkgroup/findById.do?id=' + checkGroupId).then((res) => {
+                axios.get('/permission/findById.do?id=' + checkGroupId).then((res) => {
                     if (res.data.flag) {
                         this.dialogFormVisible4Edit = true
                         this.formData = res.data.data;
                         //查询所有的检查项
-                        axios.get('/checkitem/findAll.do').then(res => {
+                        /*axios.get('/checkitem/findAll.do').then(res => {
                             // 成功
                             if (res.data.flag) {
                                 this.tableData = res.data.data;
@@ -386,9 +388,9 @@
                                     type: 'error'
                                 })
                             }
-                        })
+                        })*/
                         //查询勾选了的检查项
-                        axios.get('/checkgroup/findCheckItemIdsByCheckGroupId.do?id=' + checkGroupId).then(res2 => {
+                        /*axios.get('/checkgroup/findCheckItemIdsByCheckGroupId.do?id=' + checkGroupId).then(res2 => {
                             if (res.data.flag) {
                                 // 实现钩选检查项的回显
                                 this.checkitemIds = res2.data.data;
@@ -398,7 +400,7 @@
                                     type: 'error'
                                 })
                             }
-                        })
+                        })*/
                     } else {
                         this.$message({
                             message: res.data.message,
@@ -415,6 +417,26 @@
             },
             // 删除
             handleDelete(row) {
+                var id = row.id;
+                this.$confirm('此操作将【永久删除】该权限选择项, 是否确定?', '提示', {
+                    confirmButtonText: '确定',
+                    cancelButtonText: '取消',
+                    type: 'warning'
+                }).then(() => {
+                    //确定，发送ajax请求删除，传递要删除ID
+                    axios.post('/permission/deleteById.do?id=' + id).then(res => {
+                        this.$message({
+                            message: res.data.message,
+                            type: res.data.flag ? 'success' : 'error'
+                        });
+                        if (res.data.flag) {
+                            // 刷新列表
+                            this.findPage();
+                        }
+                    })
+                }).catch(() => {
+                    // 点击取消后执行的代码
+                });
             }
         }
     })

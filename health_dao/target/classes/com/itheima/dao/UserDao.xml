@@ -26,16 +26,16 @@
     </select>
 
     <resultMap id="userRolePermissionResultMap" type="user">
-		<id property="id" column="id"></id>
-		<result property="username" column="username"></result>
-		<result property="password" column="password"></result>
-		<collection property="roles" ofType="role" >
-			<id property="id" column="role_id"></id>
-			<result property="keyword" column="role_keyword"></result>
-			<collection property="permissions" ofType="permission">
-				<id property="id" column="permission_id"></id>
-				<result property="keyword" column="permission_keyword"></result>
-			</collection>
-		</collection>
+        <id property="id" column="id"></id>
+        <result property="username" column="username"></result>
+        <result property="password" column="password"></result>
+        <collection property="roles" ofType="role">
+            <id property="id" column="role_id"></id>
+            <result property="keyword" column="role_keyword"></result>
+            <collection property="permissions" ofType="permission">
+                <id property="id" column="permission_id"></id>
+                <result property="keyword" column="permission_keyword"></result>
+            </collection>
+        </collection>
     </resultMap>
 </mapper>

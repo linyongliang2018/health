@@ -310,22 +310,6 @@
             },
             //添加
             handleAdd() {
-                /*axios.post("/checkgroup/add.do?checkitemIds=",this.checkitemIds,this.formData).then((res)=>{
-                    if (res.data.flag){
-                        this.dialogFormVisible = false
-                        this.$message({
-                                    message: res.data.message,
-                                    type: 'success'
-                                  });
-                    }else {
-                        this.$message({
-                                    message: res.data.message,
-                                    type: 'error'
-                                  });
-                    }
-                }).finally(()=>{
-                    this.findPage()
-                })*/
                 if (this.checkitemIds.length == 0) {
                     // 没有选检查项
                     this.$message({

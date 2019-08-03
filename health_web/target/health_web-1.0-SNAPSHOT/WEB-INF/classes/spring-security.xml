@@ -27,7 +27,8 @@
                              authentication-failure-url="/login.html"
                              always-use-default-target="true"></security:form-login>
         <!--配置退出登录-->
-        <security:logout logout-success-url="/login.html" invalidate-session="true" logout-url="/logout.do"></security:logout>
+        <security:logout logout-success-url="/login.html" invalidate-session="true"
+                         logout-url="/logout.do"></security:logout>
         <!--跨域访问-->
         <security:csrf disabled="true"></security:csrf>
     </security:http>

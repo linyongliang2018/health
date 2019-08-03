@@ -286,10 +286,10 @@
                 this.dialogFormVisible = true
                 this.resetForm()
                 //先获取所有的checkgroup的选项
-                axios.get("/checkgroup/findAll.do").then((res)=>{
-                    if (res.data.flag){
+                axios.get("/checkgroup/findAll.do").then((res) => {
+                    if (res.data.flag) {
                         this.tableData = res.data.data
-                    }else{
+                    } else {
                         this.$message({
                             message: res.data.message,
                             type: 'error'
@@ -306,39 +306,39 @@
             },
             //添加
             handleAdd() {
-                axios.post("/package/add.do?checkgroupIds="+this.checkgroupIds,this.formData).then((res)=>{
+                axios.post("/package/add.do?checkgroupIds=" + this.checkgroupIds, this.formData).then((res) => {
                     if (res.data.flag) {
                         this.dialogFormVisible = false
                         this.findPage()
                         this.$message({
-                                    message: res.data.message,
-                                    type: 'success'
-                                  });
-                    }else {
+                            message: res.data.message,
+                            type: 'success'
+                        });
+                    } else {
                         this.$message({
-                                    message: res.data.message,
-                                    type: 'error'
-                                  });
+                            message: res.data.message,
+                            type: 'error'
+                        });
                     }
                 })
             },
             //分页查询
             findPage() {
-                axios.post("/package/findPage.do",this.pagination).then((res)=>{
-                    if (res.data.flag){
+                axios.post("/package/findPage.do", this.pagination).then((res) => {
+                    if (res.data.flag) {
                         this.dataList = res.data.data.rows
                         this.pagination.total = res.data.data.total
                         this.$message({
-                                    message: res.data.message,
-                                    type: 'success'
-                                  });
+                            message: res.data.message,
+                            type: 'success'
+                        });
                     } else {
                         this.$message({
-                                    message: res.data.message,
-                                    type: 'error'
-                                  });
+                            message: res.data.message,
+                            type: 'error'
+                        });
                     }
-                }).finally(()=>{
+                }).finally(() => {
                     /*this.findPage()*/
                 })
 
@@ -346,7 +346,7 @@
             //文件上传成功后的钩子，response为服务端返回的值，file为当前上传的文件封装成的js对象
             handleAvatarSuccess(res, file) {
                 // ElementUI已经帮我处理一层data res=>res.data
-                if(res.flag){
+                if (res.flag) {
                     // 上传成功
                     //res.data => {domain, imgName}
                     //图片回显，完整路径
@@ -354,7 +354,7 @@
                     this.imageUrl = imgData.domain + "/" + imgData.imageName;
                     // 提交到数据库,绑定到formData.img
                     this.formData.img = imgData.imageName;
-                }else{
+                } else {
                     this.$message({
                         message: res.data.message,
                         type: 'error'
