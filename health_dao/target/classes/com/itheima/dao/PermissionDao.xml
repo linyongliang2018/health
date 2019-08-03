@@ -6,7 +6,7 @@
         select * From t_permission
         <where>
             <if test="null != value and value.length > 0">
-                code like #{value} or name like #{value} or helpCode like #{value}
+                name like #{value} or keyword like #{value}
             </if>
         </where>
     </select>
