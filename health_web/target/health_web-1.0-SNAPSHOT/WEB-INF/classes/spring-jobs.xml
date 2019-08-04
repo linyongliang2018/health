@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:context="http://www.springframework.org/schema/context"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context.xsd">
+
+<!--    <context:component-scan base-package="com.itheima.controller"></context:component-scan>
+    &lt;!&ndash;配置自定义Job&ndash;&gt;
+    <bean id="cleanOrder" class="com.itheima.controller.OrderSettingController"></bean>
+    &lt;!&ndash;任务描述&ndash;&gt;
+    <bean id="jobDetail" class="org.springframework.scheduling.quartz.MethodInvokingJobDetailFactoryBean">
+        <property name="targetObject" ref="cleanOrder"></property>
+        <property name="targetMethod" value="cleanOrderSetting"></property>
+    </bean>
+    &lt;!&ndash;触发器&ndash;&gt;
+    <bean id="myTrigger" class="org.springframework.scheduling.quartz.CronTriggerFactoryBean">
+        <property name="jobDetail" ref="jobDetail"></property>
+        <property name="cronExpression">
+            <value>30 * * * * ? </value>
+        </property>
+    </bean>
+    &lt;!&ndash;调度工厂&ndash;&gt;
+    <bean id="scheduler" class="org.springframework.scheduling.quartz.SchedulerFactoryBean">
+        <property name="triggers">
+            <list>
+                <ref bean="myTrigger"></ref>
+            </list>
+        </property>
+    </bean>-->
+    <!--引入redis-->
+    <!--<import resource="classpath:applicationContext-redis.xml"></import>-->
+</beans>
