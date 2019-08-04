@@ -25,7 +25,7 @@ public class MenuController {
     }
 
     @PostMapping("/add")
-    public Result add(@RequestBody Menu menu){
+    public Result add(@RequestBody Menu menu) {
         //todo 有外键前端传数据注意限制,待改进
         menuService.add(menu);
         return new Result(true, MessageConstant.ADD_PERMISSION_SUCCESS);
@@ -50,7 +50,7 @@ public class MenuController {
     }
 
     @PostMapping("/edit")
-    public Result edit(@RequestBody Menu menu){
+    public Result edit(@RequestBody Menu menu) {
         menuService.edit(menu);
         return new Result(true, MessageConstant.EDIT_MENU_SUCCESS);
     }
@@ -59,5 +59,11 @@ public class MenuController {
     public Result findAll() {
         List<Menu> menus = menuService.findAll();
         return new Result(true, MessageConstant.QUERY_MENU_SUCCESS, menus);
+    }
+
+    @GetMapping("/queryByUsername")
+    public Result queryByUsername(String username) {
+        List<Menu> menuList = menuService.queryByUsername(username);
+        return new Result(true, MessageConstant.QUERY_MENU_SUCCESS, menuList);
     }
 }

@@ -211,6 +211,9 @@
             axios.get("/user/getLoginUsername.do").then(res => {
                 if (res.data.flag) {
                     this.loginUsername = res.data.data;
+                    axios.get('/menu/queryByUsername.do?username='+this.loginUsername).then((response) => {
+                        this.menuList.name = response.data.data.name;
+                    });
                 } else {
                     this.$message({
                         message: res.data.message,
@@ -220,6 +223,7 @@
             })
         }
     });
+
     $(function () {
         var wd = 200;
         $(".el-main").css('width', $('body').width() - wd + 'px');

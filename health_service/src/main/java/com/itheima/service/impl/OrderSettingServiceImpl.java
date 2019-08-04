@@ -20,6 +20,11 @@ public class OrderSettingServiceImpl implements OrderSettingService {
     private OrderSettingDao orderSettingDao;
 
     @Override
+    public void cleanOrderSetting() {
+        orderSettingDao.cleanOrderSetting();
+    }
+
+    @Override
     public void add(List<OrderSetting> orderSettingList) {
         if (orderSettingList != null && orderSettingList.size() > 0) {
             for (OrderSetting orderSetting : orderSettingList) {

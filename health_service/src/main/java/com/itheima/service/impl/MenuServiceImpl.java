@@ -57,4 +57,11 @@ public class MenuServiceImpl implements MenuService {
     public List<Menu> findAll() {
         return menuDao.findAll();
     }
+
+    @Override
+    public List<Menu> queryByUsername(String username) {
+        return menuDao.queryByUsername(username);
+    }
+
+
 }

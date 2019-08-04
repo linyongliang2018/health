@@ -19,6 +19,7 @@ import java.util.List;
 public class UserController {
     @Reference
     private UserService userService;
+
     @GetMapping("/getLoginUsername")
     public Result getLoginUsername() {
         // SecurityContextHolder, 存入上下文的内容，
@@ -58,6 +59,7 @@ public class UserController {
         }
         return new Result(true, MessageConstant.DELETE_USER_SUCCESS);
     }
+
     @GetMapping("/findById")
     public Result findById(Integer id) {
         User user = userService.findById(id);

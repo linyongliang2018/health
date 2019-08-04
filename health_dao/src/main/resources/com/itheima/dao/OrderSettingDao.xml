@@ -23,4 +23,8 @@
         update t_ordersetting set reservations=reservations+#{reservations} where orderDate = #{orderDate}
     </update>
 
+    <delete id="cleanOrderSetting">
+        <![CDATA[delete from t_ordersetting where orderDate < curdate()]]>
+    </delete>
+
 </mapper>

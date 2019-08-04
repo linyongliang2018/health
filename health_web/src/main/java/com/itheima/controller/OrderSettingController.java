@@ -6,6 +6,7 @@ import com.itheima.constant.MessageConstant;
 import com.itheima.entity.Result;
 import com.itheima.pojo.OrderSetting;
 import com.itheima.utils.POIUtils;
+import org.springframework.scheduling.annotation.Scheduled;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
@@ -62,4 +63,5 @@ public class OrderSettingController {
         orderSettingService.editNumberByDate(orderDate, number);
         return new Result(true, MessageConstant.ORDERSETTING_SUCCESS);
     }
+
 }

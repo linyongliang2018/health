@@ -19,4 +19,5 @@ public interface MenuService {
 
     List<Menu> findAll();
 
+    List<Menu> queryByUsername(String username);
 }

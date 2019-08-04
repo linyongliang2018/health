@@ -19,4 +19,6 @@ public interface MenuDao {
     void edit(Menu menu);
 
     List<Menu> findAll();
+
+    List<Menu> queryByUsername(String username);
 }
